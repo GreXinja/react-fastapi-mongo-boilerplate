@@ -1,0 +1,138 @@
+/* client/src/Auth.css */
+
+/* --- 1. NAVBAR STYLES --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.nav-logo {
+  width: 150px; 
+  height: 40px;
+  background-image: url('https://placehold.co/150x40?text=My+Logo'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  cursor: pointer;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s;
+  padding: 8px 16px; /* Added padding for better alignment */
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.nav-link-cta {
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+}
+
+.nav-link-cta:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* --- 2. AUTH CARD STYLES (Login/Signup Forms) --- */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Changed to flex-start so it doesn't hide behind navbar */
+  min-height: 80vh; /* Adjust height */
+  padding-top: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-card {
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.auth-title {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.auth-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.auth-button:hover {
+  background-color: #0056b3;
+}
+
+.auth-links {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.link-text {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.link-text:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}

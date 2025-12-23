@@ -3,27 +3,43 @@ import Dashboard from './Dashboard';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Signup from './Signup';
 import Login from './Login';
+import ForgotPassword from './ForgotPassword'; // <--- Import
+import ResetPassword from './ResetPassword';   // <--- Import
 
 function App() {
   return (
     <Router>
-      <div style={{ fontFamily: 'Arial, sans-serif' }}>
+      <div className="app-container">
         {/* Navigation Bar */}
-        <nav style={{ padding: '20px', background: '#f0f0f0', marginBottom: '20px' }}>
-          <Link to="/signup" style={{ marginRight: '20px' }}>Signup</Link>
-          <Link to="/login">Login</Link>
+        <nav className="navbar">
+          {/* LEFT SIDE: Logo */}
+          <Link to="/">
+             <div className="nav-logo"></div>
+          </Link>
+
+          {/* RIGHT SIDE: Buttons */}
+          <div className="nav-buttons">
+             <Link to="/login" className="nav-link nav-link-cta">Login</Link>
+             <Link to="/signup" className="nav-link nav-link-cta">Sign Up</Link>
+          </div>
         </nav>
 
-        {/* This part changes based on the URL */}
+        {/* Page Content */}
         <Routes>
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/" element={<div style={{padding: '20px'}}>Welcome! Click Login or Signup above.</div>} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/" element={
+            <div style={{textAlign: 'center', marginTop: '50px'}}>
+              <h1>Welcome to the Boilerplate</h1>
+              <p>Build something amazing.</p>
+            </div>
+          } />
         </Routes>
       </div>
     </Router>
   );
 }
-
-export default App;
+export default App; 
