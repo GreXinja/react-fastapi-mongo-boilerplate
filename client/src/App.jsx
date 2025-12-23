@@ -1,28 +1,19 @@
 // client/src/App.jsx
-import Dashboard from './Dashboard';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './Navbar'; // <--- Import the new component
 import Signup from './Signup';
 import Login from './Login';
-import ForgotPassword from './ForgotPassword'; // <--- Import
-import ResetPassword from './ResetPassword';   // <--- Import
+import Dashboard from './Dashboard';
+import ForgotPassword from './ForgotPassword';
+import ResetPassword from './ResetPassword';
+import About from './About'; // <--- Import About page
 
 function App() {
   return (
     <Router>
       <div className="app-container">
-        {/* Navigation Bar */}
-        <nav className="navbar">
-          {/* LEFT SIDE: Logo */}
-          <Link to="/">
-             <div className="nav-logo"></div>
-          </Link>
-
-          {/* RIGHT SIDE: Buttons */}
-          <div className="nav-buttons">
-             <Link to="/login" className="nav-link nav-link-cta">Login</Link>
-             <Link to="/signup" className="nav-link nav-link-cta">Sign Up</Link>
-          </div>
-        </nav>
+        {/* The Navbar handles its own logic now! */}
+        <Navbar />
 
         {/* Page Content */}
         <Routes>
@@ -31,10 +22,24 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/about" element={<About />} />
+          
           <Route path="/" element={
-            <div style={{textAlign: 'center', marginTop: '50px'}}>
-              <h1>Welcome to the Boilerplate</h1>
-              <p>Build something amazing.</p>
+            <div style={{textAlign: 'center', marginTop: '10px'}}>
+               {/* You can add a nice Hero Image here later */}
+               <div style={{
+                  padding: '50px', 
+                  background: 'white', 
+                  margin: '20px auto', 
+                  maxWidth: '800px', 
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 10px rgba(0,0,0,0.05)'
+               }}>
+                  <h1 style={{color: '#333', marginBottom: '10px'}}>Welcome Home</h1>
+                  <p style={{color: '#666'}}>
+                    This page is visible to everyone, logged in or not.
+                  </p>
+               </div>
             </div>
           } />
         </Routes>
@@ -42,4 +47,5 @@ function App() {
     </Router>
   );
 }
-export default App; 
+
+export default App;
